@@ -1,0 +1,38 @@
+{
+  "configuration": {
+    "status": "error",
+    "name": "JSONConfigDemo",
+    "appenders": {
+      "Console": {
+        "name": "console",
+          "target": "SYSTEM_OUT",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-10c %-5level: %msg%n%throwable"
+        }
+      },
+      "File": {
+        "name": "file",
+        "fileName": "logs/json.log",
+        "append": "false",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-10c %-5level: %msg%n%throwable"
+        }
+      }
+    },
+    "loggers": {
+      "logger": {
+        "name": "myapp",
+        "level": "trace",
+        "AppenderRef": {
+          "ref": "file"
+        }
+      },
+      "root": {
+        "level": "trace",
+        "AppenderRef": {
+          "ref": "console"
+        }
+      }
+    }
+  }
+}
